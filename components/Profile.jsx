@@ -1,5 +1,7 @@
 import PromptCard from "./PromptCard";
 
+//this component is reused for my profile or someone elses profile. 
+
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
     <section className='w-full'>

@@ -25,7 +25,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(false), 3000);
   };
-
+  
+  console.log(post?.creator?.image)
   return (
     <div className='prompt_card'>
       <div className='flex justify-between items-start gap-5'>
@@ -34,7 +35,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           onClick={handleProfileClick}
         >
           <Image
-            src={post.creator.image}
+            src={post?.creator?.image}
             alt='user_image'
             width={40}
             height={40}
@@ -43,10 +44,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-900'>
-              {post.creator.username}
+              {post?.creator?.username}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
-              {post.creator.email}
+              {post?.creator?.email}
             </p>
           </div>
         </div>
@@ -74,7 +75,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </p>
 
       {/* check if the currently logged in user is equal to the post creator AND if theyre on the profile page*/}
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
+      {session?.user.id === post.creator?._id && pathName === "/profile" && (
         <div className='mt-5 flex justify-between gap-4 border-t border-gray-100 pt-3'>
           <p
             className='font-inter text-sm green_gradient cursor-pointer'

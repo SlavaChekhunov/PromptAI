@@ -3,6 +3,7 @@ import { connectToDB } from "@utils/database";
 
 export const GET = async (request, { params }) => {
     //params lets us access dynamic variables in our routes. For example, [id] is dynamic therefore we can access it.
+    //so we will have access to params.id
     try {
         await connectToDB()
 

@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -48,6 +48,7 @@ const MyProfile = () => {
   };
 
   return (
+    // reuse this component for all kinds of profiles, not only yours. 
     <Profile
       name='My'
       desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
